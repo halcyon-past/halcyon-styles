@@ -1,18 +1,17 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "lib": ["dom", "esnext"],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": true,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "jsx": "react",
-      "declaration": true,
-      "declarationMap": true,
-      "esModuleInterop": true
-    },
-    "include": ["src/**/*.ts", "src/**/*.tsx"],
-    "exclude": ["node_modules"]
-  }
-  
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

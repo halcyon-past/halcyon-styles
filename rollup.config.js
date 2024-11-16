@@ -1,27 +1,24 @@
 import typescript from 'rollup-plugin-typescript2';
-import postcss from 'rollup-plugin-postcss';
+import { terser } from 'rollup-plugin-terser';
 
 export default {
   input: 'src/index.ts',
+  external: ['react', 'styled-components'],
   output: [
     {
       file: 'dist/index.js',
       format: 'cjs',
-      sourcemap: true,
     },
     {
-      file: 'dist/index.esm.js',
-      format: 'esm',
-      sourcemap: true,
+      file: 'dist/index.es.js',
+      format: 'es',
     },
   ],
   plugins: [
     typescript({
       tsconfig: './tsconfig.json',
+      useTsconfigDeclarationDir: true,
     }),
-    postcss({
-      extensions: ['.css'],
-    }),
+    terser(),
   ],
-  external: ['react', 'styled-components'],
 };
